@@ -1,0 +1,19 @@
+3rd Quiz of the Day..
+
+Note: Use the web or any resource available to provide answers.
+
+Question 1) Provide in bullet form the benefits of packages in Java
+
+Question 2) Could default methods be set in interfaces before JDK8 (true or false)
+
+Question 3) What's the convention for naming packages
+
+Question 4) How can we use the "final" keyword in Java? provide a bullet list with a short explanation for each scenario
+
+Question 5) Can we override a "final" class? Yes or No.. Explain your answers
+
+Question 6) Provide a code snippet which can iterate through an array without using a counter, the code snippet should provide a small list of items and if you cut/paste the code into a sample Java app, it should execute correctly
+
+Question 7) Can a method in packageA be able to access a method in PackageB if package's initial class is "protected"?
+
+Question 8) How do you evaluate if 2 strings are equal? Provide a code snippet.

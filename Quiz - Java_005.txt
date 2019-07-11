@@ -1,0 +1,64 @@
+Quiz
+
+Question 1) What class do all enumerations automatically inherit?
+
+Question 2) Given the following enumeration, write a program that uses values( ) to show a list of the constants and their ordinal values.
+
+enum Tools {
+	SCREWDRIVER, WRENCH, HAMMER, PLIERS
+}
+
+Question 3) Define boxing and unboxing. How does autoboxing/unboxing affect these actions?
+
+Question 4) Change the following fragment so that it uses autoboxing.
+
+Short val = new Short(123);
+
+Question 5) In your own words, what does static import do?
+
+Question 6) An annotation can be applied only to methods. True or False?
+
+Question 7)Generics are important to Java because they enable the creation of code that is
+A. Type-safe
+B. Reusable
+C. Reliable
+D. All of the above
+
+Question 8) Can a primitive type be used as a type argument?
+
+Question 9) As it relates to generics, what is the ? and what does it do?
+
+Question 10) Can the wildcard argument be bounded?
+
+Question 11) Do type parameters exist at run time?
+
+Question 12) How can the following be simplified?
+
+MyClass<Double,String> obj = new MyClass<Double,String>(1.1,"Hi");
+
+Question 13) Which version of Java introduced the functionality of Enumerations?
+
+Question 14) In your own words, what is an enumaration in Java?
+
+Question 15) What's the difference between variables which are "final" and enumeration? (in your own words)
+
+Question 16) What methods are predefined with all enumerations?
+
+Question 17) Can you inherit a superclass when declaring an enum?
+
+Question 18) Which version of Java introduced the functionality of autoboxing?
+
+Question 19) Is it true that autoboxing/autounboxing is directly related to Java's Type Wrappers?
+
+Question 20) What are Java Type Wrappers? Can you provide a demo (code snippet?)
+
+Question 21) Is it true that primitive types inherit from the Object class?
+
+Question 22) What feature in Java allows you to embed supplemental information to a source file?
+
+Question 23) What are key features of Java's Generics?
+
+Question 24) Can you write a general form of a generic class as a means of understanding its structure?
+
+Question 25) What term best describes the usefulness of limiting types that can be passed to a type parameter. 
+

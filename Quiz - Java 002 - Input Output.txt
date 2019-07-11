@@ -1,0 +1,27 @@
+Quiz 2:
+
+Question 1) How many types of I/O streams does Java provide?
+
+Question 2) How do we open a file for reading bytes? (quick code sample/snippet)
+
+Question 3) How do we open a file for reading characters? (quick code sample/snippet)
+
+Question 4) How do we open a file for random access I/O? (quick code sample/snippet)
+
+Question 5) In your own word, what is an I/O Stream?
+
+Question 6) What are the 3 predefined streams in Java? 
+
+Question 7) Which package are the 3 predefined stream in Java come from?
+
+Question 8) What type of stream is used to read binary data?
+
+Question 9) What do we call in Java a technique which closes the file automatically (since Java 7)
+
+Question 10) What is one of the benefits in closing files automatically in Java?
+
+Question 11) In your own words, what is the difference between reading files sequentially vs random access?
+
+Question 12) In your own words, how would you explain what random file access is?
+
+Question 13) What is the best class to read characters from the console in Java?

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Object in JS</title>
+		<script>
+		
+			var obj = {
+				"name": "Claude",
+				"dob": "07/04/1666",
+				"sign": "Cancer"
+			}
+			
+			var obj2 = {
+				"name": "Claude",
+				"dob": "07/04/1666",
+				"sign": "Cancer"
+			}
+
+			
+			var obj3 = obj2;
+			
+			obj3.name = "Bozo;"
+			
+			var copyOfObj3 = {};
+			
+			var key;
+			
+			for (key in obj3) {
+				copyOfObj3[key] = obj3[key];
+			}
+
+			debugger;
+
+		
+		
+		</script>
+	</head>
+	<body>
+		<h1>Object in JS</h1>
+		<p>Use the browser's debugger to view the js executing.</p>
+	</body>
+</html>

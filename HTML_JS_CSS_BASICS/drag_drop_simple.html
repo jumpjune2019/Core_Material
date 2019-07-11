@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Drag and Drop</title>
+		<style>
+		
+			#dragItem {
+				float: left;
+				width: 200px;
+				height: 100px;
+				text-align: center;
+				font-weight: bold;
+				-webkit-user-select: none; /* Safari */        
+				-moz-user-select: none; /* Firefox */
+				-ms-user-select: none; /* IE10+/Edge */
+				user-select: none; /* Standard */
+				cursor: grab;
+				background-color: #ff8888;
+			}
+
+			#dropArea {
+				float: right;
+				width: 300px;
+				height: 150px;
+				text-align: center;
+				font-weight: bold;
+				-webkit-user-select: none; /* Safari */        
+				-moz-user-select: none; /* Firefox */
+				-ms-user-select: none; /* IE10+/Edge */
+				user-select: none; /* Standard */
+				cursor: pointer;
+				background-color: #8888ff;
+			}
+
+			.clearfix {
+				clear: both;
+				margin-bottom: 20px;
+			}
+			
+			.menu {
+				
+			}
+			
+		</style>
+		<script type='text/javascript'>
+
+			function init(){
+			
+				var dragItem = document.getElementById("dragItem");
+				var dropArea = document.getElementById("dropArea");
+				
+				// var setRandom = document.getElementById("setRandom");
+				// var evaluate = document.getElementById("evaluate");
+				// var resetAll = document.getElementById("resetAll");
+				
+				function startDragItemFunc(e) {
+					e.dataTransfer.setData("text", e.target.id);
+				}
+				
+				function dropItemFunc(e) {
+					e.preventDefault();
+					var data = e.dataTransfer.getData("text");
+					var dragEl = document.getElementById(data)
+					e.target.innerHTML = dragEl.innerHTML;
+					dragEl.innerHTML = "";
+				}
+				
+				function dragOverItemFunc(e) {
+					e.preventDefault();
+				}
+				
+				/*
+				function setRandomFunc() {
+					console.log("set random");
+					console.log("dormant for now");
+				}
+		
+				function evaluateFunc() {
+					console.log("evaluate");
+					console.log("dormant for now");
+				}
+				
+				function resetAllFunc() {
+					console.log("reset all");
+					console.log("dormant for now");
+				}
+
+				setRandom.addEventListener("click", setRandomFunc, false);
+				evaluate.addEventListener("click", evaluateFunc, false);
+				resetAll.addEventListener("click", resetAllFunc, false);
+				*/
+				dragItem.addEventListener("dragstart", startDragItemFunc, false);
+				dropArea.addEventListener("drop", dropItemFunc, false);
+				dropArea.addEventListener("dragover", dragOverItemFunc, false);
+				
+			}
+		
+		</script>		
+	</head>
+	<body onload="init()">
+		<div id='Container'>
+			<div id='dragItem' unselectable="on" draggable=true>To be dragged</div>
+		</div>
+		<div id='dropArea'>
+			drop it here!
+		</div>
+		<div class='clearfix'></div>
+		<div id="state">Values Not Seeded, don't drag...</div>
+		<div class='clearfix'></div>
+		<div class='menu'>
+			<button id='setRandom'>Seed the values</button>
+			<button id='evaluate'>Evaluate</button>
+			<button id='resetAll'>Reset All</button>
+			
+		</div>
+	</body>
+</html>

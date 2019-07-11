@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Timers in (ES5)</title>
+		<script>
+		
+			window.onload = init;
+			
+			function init() {
+				var cb = function(e) {
+					var val = e.target.getAttribute("nextstate");
+					e.target.value = val;
+					switch(val) {					
+						case "End":
+							val = "Think";
+						break;
+						case "Think":
+							val = "Play";
+						break;
+						case "Play":
+							val = "End";
+						break;
+					}
+					e.target.setAttribute("nextstate", val);
+				}
+				var btn = document.getElementById("myState");
+				btn.addEventListener("click", cb, false);
+
+				var setTimeoutFunc = function() {
+					var refreshMeEL = document.getElementById("refreshme");
+					refreshMeEL.innerHTML = "I'm finally refreshed!";
+				}
+				
+				setTimeout(setTimeoutFunc, 10000);
+				
+				var count = 0;
+				
+				var setIntervalFunc = function() {
+					var refreshMyTimeEl = document.getElementById("refreshmytime");
+					refreshMyTimeEl.innerHTML = count++;
+				}
+				setInterval(setIntervalFunc, 500);
+			}
+		
+		
+		</script>
+	</head>
+	<body>
+		<h1>Timers in (ES5)</h1>
+		<p>Use the browser's debugger to view the js executing</p>
+		<input type='button' id="myState" nextstate="End" value="Play"></input>
+		<p id="refreshme"></p>
+		<p id="refreshmytime"></p>		
+	</body>
+</html>		

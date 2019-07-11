@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Set timeout breaking large loops</title>
+		<!-- script src="../jquery/jquery.js"></script -->
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+		</style>
+		<script>
+			window.onload = function () {
+	            var length = 100;
+	            var chunkSize = 15;
+	            var iterationLength = Math.floor(length / chunkSize);
+	            var remainder = length % chunkSize;
+	            if(remainder > 0) {
+	                iterationLength = iterationLength + 1;
+	            }
+	            var iteration = 0;
+	            
+	            //debugger;
+	            
+	            setTimeout(function addRowsToStore() {
+	            	
+	            	//debugger;
+	            	
+	                var base = chunkSize * iteration;
+	                var loopLength = chunkSize;
+	                if(iteration == iterationLength - 1 && remainder > 0) {
+	                    loopLength = remainder;                    
+	                }  
+	                
+	                //debugger;              
+	                for(var i = 0; i < loopLength; i++) {
+	                    console.log(i + base);
+	                }
+	                iteration++;
+	                //debugger;
+	                if(iteration < iterationLength) {
+	                    setTimeout(addRowsToStore(), 0);
+	                }
+	            }, 0);
+			};
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

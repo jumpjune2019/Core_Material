@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+	<head>
+		<title>CSS 101</title>
+		<style type="text/css">
+		
+			h1 {
+				background-color: #dddddd;
+				width: 200px;
+				height: 80px;
+				/* overflow hidden means that content doesnt spill out */
+				/* overflow: hidden; */
+				/* overflow: auto dynamically adds a scrollbar when there is */
+				/* too much content */
+				/* overflow: auto */
+				font-size: 1.2em;
+			}
+			
+			.bozo {
+				color: white;
+				background-color: red;
+			}
+			
+			#clown {
+				color: white;
+				background-color: blue;
+			}
+			
+			p {
+				font-size: 1.4em;
+			}
+			
+			h1, p {
+				margin: 30px 40px;
+			}
+			
+			
+			/* CSS Specificity Test */
+			div {
+				background-color: #dddddd;
+			}
+			
+			.myClass {
+				background-color: #ff0000;
+				border: 20px solid yellow;
+				padding: 20px;
+				margin: 20px;
+			}
+			
+			#myClass {
+				background-color: #00ff00;
+				
+			}
+
+			/* difference between display: none and visibility: hidden */
+			
+			#display {
+				display: block;
+				padding: 20px;
+				background-color: #00ff00;
+			}
+			
+			#visibility {
+				visibility: hidden;
+				padding: 20px;
+				background-color: #ff00ff;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>CSS 101</h1>
+		<p class="bozo">Will see formatting of HTML Elements live!!!!</p>
+		<p id="clown">This is an ID selector at work!</p>
+		<p style="background-color: #00ffff;color:#000000;">Inline Style at work!</p>
+		
+		<!-- div -->
+		<div class="myClass">
+		<!-- div id="myClass" -->
+		<!-- div style="background-color:#0000ff" -->
+			I am going to test stuff for CSS specificity rules, look at the code!
+		
+		
+		</div>
+		
+		<div id="visibility">Please make a space for me but keep me hidden until I'm ready to peek-a-boo</div>
+		
+		<div id="display">I will either be here, or not!</div>
+		
+		<div>I'm gonna stay and show you I'm always here! You got a friend in me!</div>
+		
+	</body>
+</html>

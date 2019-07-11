@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Adding method to HTML elements via HTMLElement</title>
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+			mybutton {
+				border: 1px solid black;
+				padding: 2px;
+				background-color:#cccccc;
+			}
+		</style>
+		<script>
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			};
+
+			HTMLElement.prototype.remove = function() {
+				if(this.parentNode) {
+					this.parentNode.removeChild(this);
+				}
+			};
+
+			window.onload = function () {
+				var button = document.createElement("mybutton");
+				var node = document.createTextNode("hello");
+				button.appendChild(node);
+				button.addEventListener("click", function() {
+					var a = document.getElementById('a');
+					a.remove();
+					document.getElementById('b').remove();
+				}, false);
+				document.body.appendChild(button);
+
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="results"></ul>
+		<div id='a'>I'm going to be removed</div>
+		<div id='b'>I'm going to be removed too!</div>
+	</body>
+</html>

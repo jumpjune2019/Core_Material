@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Storing Collection of Unique Functions</title>
+		<script>
+
+			// note: functions can have properties
+
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			}
+
+			window.onload = function() {
+
+				var store = {
+					nextId: 1,
+					cache: {},
+					add: function(fn) {
+						debugger;
+						if (!fn.id) {
+							fn.id = store.nextId++;
+							return !!(store.cache[fn.id] = fn);
+						}
+					}
+				};
+
+				function ninja(){}
+
+				assert(store.add(ninja), "Function was safely added.");
+				assert(!store.add(ninja), "But it was only added once.");
+			}
+
+		</script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<ul id="results"></ul>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+/*
+ * CSS FILE DIVIDED IN 3 SECTIONS
+ * - RESET CSS
+ * - DEFAULT CSS ATTRIBUTES FOR HTML TAGS
+ * - CSS CLASSES FOR DEMO
+ */
+
+
+/* **** RESET CSS **** */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* **** DEFAULT CSS ATTRIBUTES FOR HTML TAGS **** */
+
+html, body {
+	font-family: Arial, sans serif;
+	font-size: 1em;
+	color: #000000;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	height: 100%;
+}
+
+/* **** CSS CLASSES FOR DEMO **** */
+
+#container {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+#title {
+	padding: 10px;
+	font-weight: bold;
+	color: #000066;
+}
+
+#parent-box {
+	background-color: blue;
+	width: 400px;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	z-index 1;
+	position: relative;
+}
+
+#child-box {
+	background-color: red;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top:100px;
+	left: 100px;
+	z-index: 2;
+	visibility:hidden;	
+	display: block;
+}
+
+#btn {
+	width: 100px;
+	background-color: #333366;
+	color: #ccccaa;
+	margin: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}

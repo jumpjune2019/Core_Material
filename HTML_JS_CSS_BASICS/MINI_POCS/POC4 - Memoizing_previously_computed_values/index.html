@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Storing Collection of Unique Functions</title>
+		<script>
+
+			// note: functions can have properties
+
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			}
+
+			window.onload = function() {
+
+
+				function isPrime(value) {
+					if (!isPrime.answers) isPrime.answers = {};
+					if (isPrime.answers[value] != null) {
+						return isPrime.answers[value];
+					}
+
+					var prime = value != 1; // 1 can never be prime
+					for (var i = 2; i < value; i++) {
+						if (value % i == 0) {
+							prime = false;
+							break;
+						}
+					}
+					return isPrime.answers[value] = prime;
+				}
+
+				assert(isPrime(5), "5 is prime!" );
+				assert(isPrime.answers[5], "The answer was cached!" );
+
+
+			}
+
+		</script>
+		<style>
+		</style>
+	</head>
+	<body>
+		<ul id="results"></ul>
+	</body>
+</html>

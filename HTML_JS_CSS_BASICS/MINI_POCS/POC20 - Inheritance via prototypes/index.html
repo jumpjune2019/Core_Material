@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Inheritance via Prototype</title>
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+		</style>
+		<script>
+
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			};
+
+			window.onload = function () {
+
+				function Person() {};
+				Person.prototype.dance = function() {};
+
+				function Ninja() {};
+
+				Ninja.prototype = new Person();
+
+				var ninja = new Ninja();
+
+				assert(ninja instanceof Ninja, "ninja is Ninja");
+				assert(ninja instanceof Person, "ninja is Person");
+				assert(ninja instanceof Object, "ninja is Object");
+				assert(typeof ninja.dance == "function", "ninja can dance!");
+
+
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="results"></ul>
+	</body>
+</html>

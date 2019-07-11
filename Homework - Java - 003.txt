@@ -1,0 +1,63 @@
+Homework
+
+under java_training/assignments/java_003
+
+// folder: matrixchoice
+1) rework the matrix example
+	have it ask if they want to
+	1) print on screen only
+	2) print on file
+	3) print on both
+	
+	And then ensure you have the matrix correctly formatted for screen, print or both.
+	
+// folder: matrixcustomhandlers
+2)	Create two sets of custom exception handlers (extending the above matrixchoice)
+
+	a) if any key but 1) 2) or 3) are selected
+	b) if an invalid value is passed to refer to an item in the matrix of dice
+
+// folder: compare
+3) Create a utility to compare two files using command prompt arguments
+		hint: FileInputStream could be used
+		
+		> Compare file.txt file2.txt
+		
+		Output: file.txt and file2.txt:
+		Result: identical content
+				character length for both: XX
+		  or
+		Result: different content
+				character length for file.txt: XX
+				character length for file2.txt: YY
+
+				
+// folder: phone		
+4) Create an application which does the following:
+
+	creates a two-dimensional array which will hold phonebook data;
+
+	Rows are records
+	Column 0 = name
+	Column 1 = phone number
+	Column 2 = city
+	
+	Ensure you can input 5 rows of data using keyboard entry
+	
+	Upon completion, ensure you can print both on screen and on file "phone.txt" the info which has been displayed.
+	
+	The output on both screen and display should be as follows:
+	
+	PhoneBook App
+	Name		Phone		City
+	asas		asas		asas
+	
+	5 rows of data
+	
+	the file will be formatted in the exact same way.
+	
+	Added requirement, if any entry is empty, a custom exception is raised and the user is asked to retry again
+	
+	Added requirement, when a user enters a row of data, they get a feedback message displaying the entered data in a line and the ability to either accept the row of the data or type a new row of data.
+		
+	

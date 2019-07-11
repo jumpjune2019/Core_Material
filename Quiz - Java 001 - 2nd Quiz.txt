@@ -1,0 +1,14 @@
+1.	In your own words what is the garbage collector?
+
+2.	How do you implement inheritance in Java in your own words?
+
+3.	What are the pros and cons of recursion?
+
+4.	Explain the various ways you can use super in Java. (bullet list)
+
+5.	Explain Math.random() in Java. Provide a code snippet that provides an integer number between 1 and 6 inclusive.
+Math.random() returns a random double that is greater than or equal to 0 but less than 1.
+ 
+6.	Research in Java how to find a string in a Java array.  (Code snippet) a specific string in an array
+
+7.	Research and list 5 benefits of packages in Java.

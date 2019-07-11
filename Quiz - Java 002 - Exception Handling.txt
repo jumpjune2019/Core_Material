@@ -1,0 +1,34 @@
+1st Quiz of the Day
+
+Note: Use the web or any resource available to provide answers.
+
+Question 1) What are the 2 direct subclasses of Throwable?
+
+Question 2) What's an exception? (in your own words)
+
+Question 3) What happens in Java when an exception is not handled? (in your own words)
+
+Question 4) Can we use multiple catch statements? (true or false)
+
+Question 5) Can we nest try blocks? (true or false)
+
+Question 6) what keyword do you use to ensure you can test an Exception in your code? 
+	a) the keyword
+	b) provide a code snippet to demonstrate (one line)
+	
+Question 7) if we wish to have an exception being handled by multiple handlers, what's the term for that?
+
+Question 8) is there a way to have code execute regardless of errors? 
+	a) yes or no
+	b) what would be its keyword?
+	
+Question 9) can a method be set to accept exceptions? 
+	a) yes or no
+	b) if yes to above
+		is it true that only one exception per method can be set? (true or false)
+		
+Question 10) Name an exception that handles type not found
+
+Question 11) Should your code typically catch exceptions of type Error? (true or false) and why is it true or false?
+
+Question 12) What are the 3 ways an exception can be generated in Java? (in your own words, bullet list, quick description)

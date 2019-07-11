@@ -1,0 +1,31 @@
+Quiz 1
+
+Question 1) How many types of multitasking concepts exist?
+
+Question 2) Can you name the types of multitasking concepts?
+
+Question 3) Can you explain in your own words what each concept are and their distinctive differences?
+
+Question 4) What is a thread? (in your own words)
+
+Question 5) What is idle time for a computer? (in your own words)
+
+Question 6) What type of 'state' can a thread be in? (bullet list)
+
+Question 7) What term is used in Java to allow the coordination of multiple thread executions?
+
+Question 8) How many ways can we create "threads" in Java? and can you enumerate these ways? (bullet list)
+
+Question 9) Can we create multiple threads in Java? (yes/no)
+
+Question 10) Can we modify a thread's priority? (yes/no)
+
+Question 11) if "yes" to Question 10, then how? (any methods?) and can you explain a bit of the values that can be passed to this potential method?
+
+Question 12) From question 7) - Please provide a list of ways in Java we can allow the coordination of multiple thread executions.
+
+Question 13) Can threads talk to each other?  (yes/no)
+
+Question 14) Assuming question 13 is "yes", can you explain how? is there an API for this?
+
+Question 15) Is it true that Java has a restricted set of Objects that can be used for threads? (true / false)

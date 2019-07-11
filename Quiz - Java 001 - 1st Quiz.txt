@@ -1,0 +1,10 @@
+1. Explain in your own words they key words public and private.
+
+2. Describe in your own words the basic concept of polymorphism in Java. (bullet points)
+
+3. List the concepts of object oriented programming (bullet points).
+
+4. Provide 5 distinct features that differentiate Java and JavaScript.
+
+5. In Java, what’s the difference between a singleton class and a static class.
+

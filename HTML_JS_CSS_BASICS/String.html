@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+		<title>String in JS</title>
+		<script>
+		
+			var myString = "hello";
+			var myString2 = new String("hello you!");
+			
+			String.prototype.translate = function(lang) {
+				if("fr") {
+					return "bonjour";
+				}
+			}
+			
+			var myOtherString = "hello";
+			var myOtherString = myOtherString.translate("fr");
+			console.log(myOtherString);
+			
+		
+		</script>
+	</head>
+	<body>
+		<h1>String in JS</h1>
+		<p>Use the browser's debugger to view the js executing.</p>
+	</body>
+</html>

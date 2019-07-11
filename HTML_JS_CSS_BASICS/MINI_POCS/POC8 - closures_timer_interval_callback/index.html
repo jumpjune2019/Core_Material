@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<title>Closures Timer Interval Callback</title>
+		<!-- script src="../jquery/jquery.js"></script -->
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+
+			#box {
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				top: 0px;
+				left: 0px;
+				background-color:#ff0000;
+				border: 1px solid black;
+				text-align: center;
+			}
+
+			#box2{
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				top: 20px;
+				left: 800px;
+				background-color:#ff0000;
+				border: 1px solid black;
+				text-align: center;
+			}
+
+			#box3{
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				top: 200px;
+				left: 1200px;
+				background-color:#ff0000;
+				border: 1px solid black;
+				text-align: center;
+			}
+
+
+			#stuff {
+
+				position: absolute;
+				width: 100px;
+				height: 600px;
+				top: 20px;
+				left: 900px;
+				border: 1px solid black;
+				overflow: auto;
+				text-align: center;
+				color: #000000;
+
+			}
+
+			#li {
+				color: #000000;
+			}
+
+		</style>
+		<script>
+
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			};
+
+
+			// $(document).ready(function() {});
+
+			window.onload = function () {
+
+				var tick = 0;
+				var tl = 600;
+				var interVal = 1;
+				function animateIt(elementId) {
+					var elem = document.getElementById(elementId);
+					var timer = setInterval(function(){
+						if (tick <= tl) {
+							elem.style.left = elem.style.top = tick + "px";
+							tick++;
+						} else {
+							clearInterval(timer);
+							assert(tick == tl, "Tick accessed via a closure.");
+							assert(elem, "Element also accessed via a closure.");
+							assert(timer, "Timer reference also obtained via a closure." );
+						}
+					}, interVal);
+				}
+
+				function addToIt(elementId) {
+					var elem = document.getElementById(elementId);
+					var timer = setInterval(function(){
+						if (tick <= tl) {
+							var list = document.createElement("li");
+							var txtNode = document.createTextNode("Tick: " + tick);
+							list.appendChild(txtNode);
+							elem.appendChild(list);
+						} else {
+							clearInterval(timer);
+						}
+					}, interVal);
+				}
+
+
+				function animateIt2(elementId, dir, tick) {
+					var elem = document.getElementById(elementId);
+					var innerInterVal = 8;
+					var incInt = true;
+					tickInc = 1;
+					var timer = setInterval(function(){
+						if(dir == 'down') {
+							if(tick <= 200) {
+								elem.style.top = tick + "px";
+								tick = tick + tickInc;
+							} else {
+								dir = "up";
+								tick = tick - tickInc;
+							}
+						} else {
+							if(tick == 20) {
+								dir = 'down';
+								tick = tick + tickInc;
+							} else {
+								elem.style.top = tick + "px";
+								tick = tick - tickInc;
+							}
+						}
+					}, innerInterVal);
+				}
+
+				animateIt('box');
+				addToIt('stuff');
+				// each closure is now working it its own scope
+				var duh = new animateIt2('box2', 'down', 20);
+				var duh2 = new animateIt2('box3', 'up', 200);
+				duh();
+				duh2();
+
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="results"></ul>
+		<div id="box">box!</div>
+		<ul id="stuff"></ul>
+		<div id="box2">box2!</div>
+		<div id="box3">box3!</div>
+	</body>
+</html>

@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<title>RegEx - Using a timer to break long running tasks</title>
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+
+			#box2{
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				top: 20px;
+				left: 800px;
+				background-color:#ff0000;
+				border: 1px solid black;
+				text-align: center;
+			}
+
+			#box3{
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				top: 200px;
+				left: 1200px;
+				background-color:#ff0000;
+				border: 1px solid black;
+				text-align: center;
+			}
+
+			#wrapper {
+				width: 700px;
+				height: 300px;
+				overflow: auto;
+				border: 1px solid black;
+			}
+
+			#iframewrapper #iframetest {
+				width: 700px;
+				height: 300px;
+				overflow: auto;
+				border: 1px solid black;
+			}
+
+
+		</style>
+		<script>
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			};
+
+			function spacer() {
+				var li = document.createElement("li");
+				li.appendChild(document.createTextNode(""));
+				document.getElementById("results").appendChild(li);
+			}
+
+
+			function animateIt2(elementId, dir, tick) {
+				var elem = document.getElementById(elementId);
+				var innerInterVal = 8;
+				var incInt = true;
+				tickInc = 1;
+				var timer = setInterval(function(){
+					if(dir == 'down') {
+						if(tick <= 200) {
+							elem.style.top = tick + "px";
+							tick = tick + tickInc;
+						} else {
+							dir = "up";
+							tick = tick - tickInc;
+						}
+					} else {
+						if(tick == 20) {
+							dir = 'down';
+							tick = tick + tickInc;
+						} else {
+							elem.style.top = tick + "px";
+							tick = tick - tickInc;
+						}
+					}
+				}, innerInterVal);
+			}
+
+			window.onload = function () {
+
+				var duh = new animateIt2('box2', 'down', 20);
+				var duh2 = new animateIt2('box3', 'up', 20);
+				var myIframe = document.getElementById("iframetest");
+				var iFrameWindow = myIframe.contentWindow || myIframe.documentWindow;
+				var iFrameDoc = iFrameWindow.document;
+				iFrameDoc.open();
+				iFrameDoc.write("<html><head><script>window.onload=function() { function generateRowsWrapper() {var rowCount=20000,divideInto=10000,chunkSize=rowCount/divideInto,iteration=0,table=document.getElementsByTagName(\"tbody\")[0];var tick = 0;var tl = 600;var interVal = 1;setTimeout(function generateRows() {var base = (chunkSize) * iteration;for(var i = 0; i < chunkSize; i++) {var tr = document.createElement(\"tr\");for(var t = 0; t < 6; t++) {var td = document.createElement(\"td\");td.appendChild(document.createTextNode((i + base) + \",\" + t + \",\" + iteration));tr.appendChild(td);}table.appendChild(tr);}iteration++;if(iteration < divideInto) {setTimeout(generateRows, 0);}}, 50);};var gen = new generateRowsWrapper();gen(); }" + "</scr" + "ipt></head><body><div id='wrapper'><table><tbody></tbody></table></div></body></html>");
+				iFrameDoc.close();
+			}
+
+
+		</script>
+	</head>
+	<body>
+		<ul id="results"></ul>
+		<div id="box2">box2!</div>
+		<div id="box3">box3!</div>
+		<div id='iframewrapper'><iframe id='iframetest'></iframe></div>
+	</body>
+</html>

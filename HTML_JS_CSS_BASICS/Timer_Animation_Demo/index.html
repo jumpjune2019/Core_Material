@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+	<head>
+		<title>Animation Demo</title>
+		<link rel='stylesheet' href='css/demo.css' />
+		<script type='text/javascript' src='js/demo.js'></script>
+		<script type='text/javascript'>
+			$.ready(function() {
+				$.get('title').innerHTML = $.string.format("Animation Demo version {0}", $.getVersion());
+				var childBox = $.get('child-box');
+				var parentBox = $.get('parent-box');
+				var animatedBox = $.setAnimation({
+					target: childBox,
+					container: parentBox, // if null, then body
+					start: "tl", // or [x, y]
+					end: "br" // or [x, y]
+				});		
+						
+				$.addEvent($.get('btn'), 'click', function() {
+					if(this.value == "start") {
+						this.value = "pause";
+						animatedBox.start();
+					} else {
+						if(this.value == "pause") {
+							animatedBox.pause();
+						} else {
+							animatedBox.resume();
+						}
+						this.value = this.value == "pause" ? "resume" : "pause";
+					}
+				});
+			});
+		</script>		
+	</head>
+	<body>
+		<div id='container'>
+			<div id='title'></div>
+			<div id='parent-box'>
+				<div id='child-box'></div>
+			</div>
+			<div>
+				<input type='button' value='start' id='btn' />
+			</div>	
+		</div>
+	</body>
+</html>

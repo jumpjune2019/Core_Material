@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>New Object instantitation using a reference to a constructor</title>
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+		</style>
+		<script>
+
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			};
+
+			window.onload = function () {
+
+				function Ninja() {
+					this.swung = true;
+					this.swingSword = function() {
+						return !this.swung;
+					}
+				}
+
+				var ninja = new Ninja();
+				var ninja2 = new ninja.constructor();
+				var ninja3 = ninja;
+
+				assert(ninja2 instanceof Ninja, "It's a Ninja");
+				assert(ninja !== ninja2, "Not the same Ninja!");
+				assert(ninja === ninja3, "ninja and ninja3 are the same Ninja!");
+
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="results"></ul>
+	</body>
+</html>

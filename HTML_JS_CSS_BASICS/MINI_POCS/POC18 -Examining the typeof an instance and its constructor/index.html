@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Examining the typeof an instance and its constructor</title>
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+		</style>
+		<script>
+
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			};
+
+			window.onload = function () {
+
+				function Ninja() {
+					this.swung = true;
+					this.swingSword = function() {
+						return !this.swung;
+					}
+				}
+
+				var ninja = new Ninja();
+
+				assert(typeof ninja == "object", "the type of the instance is object.");
+				assert(ninja instanceof Ninja, "instanceOf identifies the constructor.");
+				assert(ninja.constructor == Ninja, "Ninja object created by the Ninja function.");
+
+
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="results"></ul>
+	</body>
+</html>

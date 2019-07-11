@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Behavioral Changes to the prototype - refined example</title>
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+		</style>
+		<script>
+
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			};
+
+			window.onload = function () {
+
+				function Ninja() {
+					this.swung = true;
+					this.swingSword = function() {
+						return !this.swung;
+					}
+				}
+
+				var ninja = new Ninja();
+
+				Ninja.prototype.swingSword = function() {
+					return this.swung;
+				}
+
+				assert(ninja.swingSword(), "Called the instance method, not the prototype");
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="results"></ul>
+	</body>
+</html>

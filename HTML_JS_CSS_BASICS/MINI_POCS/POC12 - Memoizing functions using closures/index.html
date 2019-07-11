@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Memoizing functions using closures</title>
+		<!-- script src="../jquery/jquery.js"></script -->
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+		</style>
+		<script>
+
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			};
+
+			Function.prototype.memoized = function(key) {
+				this._values = this._values || {};
+				return (this._values[key] !== undefined) ? this._values[key] : this._values[key] = this.apply(this, arguments);
+			}
+
+			Function.prototype.memoize = function() {
+				var fn = this;
+				return function() {
+					return fn.memoized.apply(fn, arguments);
+				}
+			}
+
+			// $(document).ready(function() {});
+
+			window.onload = function () {
+
+				var isPrime = (function(num) {
+					console.log("num is " + num);
+					var prime = num != 1;
+					console.log("prime is " + prime);
+
+					for(var i = 2; i < num; i++) {
+						console.log("i = " + i);
+						if(num % 1 == 0) {
+							prime = false;
+							break;
+						}
+					}
+					return prime;
+				}).memoize();
+
+				assert(isPrime(17), "17 is prime");
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="results"></ul>
+	</body>
+</html>

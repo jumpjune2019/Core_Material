@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Binding a specific context to an event handler</title>
+		<!-- script src="../jquery/jquery.js"></script -->
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+		</style>
+		<script>
+
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			};
+
+			function bind (context, name) {
+				return function() {
+					return context[name].apply(context, arguments);
+				}
+			}
+
+			// $(document).ready(function() {});
+
+			window.onload = function () {
+
+				var button = {
+					clicked: false,
+					click: function() {
+						this.clicked = true;
+						assert(button.clicked, "this button has been clicked");
+						console.log(this);
+					}
+
+				}
+
+				var elem = document.getElementById('test');
+				elem.addEventListener("click", bind(button, "click"), false);
+
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="results"></ul>
+		<button id='test'>Click Me!</button>
+	</body>
+</html>

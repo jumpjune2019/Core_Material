@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Immediate Function to handle iteration property</title>
+		<!-- script src="../jquery/jquery.js"></script -->
+		<style type='text/css'>
+			#results li.pass { color: green; }
+			#results li.fail { color: red; }
+		</style>
+		<script>
+
+			function assert(value, desc) {
+				var li = document.createElement("li");
+				li.className = value ? "pass" : "fail";
+				li.appendChild(document.createTextNode(desc));
+				document.getElementById("results").appendChild(li);
+			};
+			// $(document).ready(function() {});
+
+			window.onload = function () {
+
+				var div = document.getElementsByTagName('div');
+				var divL = div.length;
+				for(var i = 0; i < divL; i++) {
+					(
+						function(n) {
+
+							div[n].addEventListener("click", function() {
+								alert("div #" + n + " was clicked.");
+							}, false)
+
+						}
+					)(i);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="results"></ul>
+		<div>Div 0</div>
+		<div>Div 1</div>
+	</body>
+</html>

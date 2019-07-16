@@ -1,0 +1,46 @@
+Quiz
+
+Question 1) What is the lambda operator?
+
+Question 2) What is a functional interface?
+
+Question 3) How do functional interfaces and lambda expressions relate?
+
+Question 4) What are the two general types of lambda expressions?
+
+Question 5) Show a lambda expression that returns true if a number is between 10 and 20, inclusive. (code snippet)
+
+Question 6) Create a functional interface that can support the lambda expression you created in question 5. Call the interface MyTest and its abstract method testing( ). <-- code snippet
+
+Question 7) Create a block lambda that computes the factorial of an integer value. Demonstrate its use. (code snippet)
+
+Question 8) Can a lambda expression use a local variable? If so, what constraint must be met?
+
+Question 9) If a lambda expression throws a checked exception, the abstract method in the functional interface must have a throws clause that includes that exception. (true or false)
+
+Question 10) What is a method reference?
+
+Question 11) How is a constructor reference specified?
+
+Question 12) Java defines several predefined functional interfaces in what package?
+
+Question 13) In computer programming, an anonymous function (function literal, lambda abstraction, or lambda expression) is a function definition that is bound to an identifier (true or false)
+
+Question 14) JDK 6 introduces lambda expression (true or false)
+
+Question 15) Name at least 5 key benefits of lambda expressions in Java (bullet list)
+
+Question 16) Can we use generics with lambda expressions?
+
+Question 17) Lambdas are commonly referred to as: (pick a single choice)
+	a) closures
+	b) semantic coding
+	c) constructor overload
+	d) passive method
+	e) all of the above
+
+Question 18) Functional Interface: The keyword modifier ‘abstract’ is required when defining a functional interface as it not implicit (true or false)
+
+Question 19) Functional interface are not reusable, only one instance can be created in code (true or false)
+
+Question 20) Primitive Data Types are not allowed to be used to define a functional interface (true or false)

@@ -1,0 +1,51 @@
+Quiz
+
+Question 1) Are applets available in JDK 9 and up? (true or false)
+
+Question 2) What would be the key reason, assuming you answered false in the previous question that applets are no longer available? (n/a if you answered true)
+
+Question 3) What does the acronym GUI stand for?
+
+Question 4) What flaws does AWT have which is addressed using Swing? (in your own words)
+
+Question 5) What is Java's overarching philosophy?
+
+Question 6) What are the key features which Swing offers which address the limitations associated with AWT components?
+
+Question 7) What does the term 'lightweight' component mean when it comes to Swing?
+
+Question 8) What is the term to define the mofified version of the classic MVC architecture which Swing uses?
+
+Question 9) What are 2 key items which make up Swing GUI?
+
+Question 10) follow-up to Question 9) what are their key differences?
+
+Question 11) How many types of containers does Swing define?
+
+Question 12) Enumerate the top level containers which do NOT inherit from the JComponent class (list)
+
+Question 13) What term do we use for containers that specifically inherit from JComponent?
+
+Question 14) Can you enumerate a few containers that inherit from JComponent?
+
+Question 15) What are Swing Layout Managers? (in your own words)
+
+Question 16) follow-up to Question 15) enumerate a few of them
+
+Question 17) What is the default layout manager for a JFrame?
+
+Question 18) Give me a quick definition of a BorderLayout and explain to me with a little code snippet how to use it if I wish to have 3 components stacked one on-top of each other
+
+Question 19) In your own words, what is Java's Event Dispatching Thread mechanism in Swing?
+
+Question 20) can you enumerate the methods available based on Question 19)?
+
+Question 21) What would be the class to use if I needed to know the width and height of a component?
+
+Question 22) In your own words (maybe a bullet list) what are the 3 main steps in the creation and use of a Swing Component?
+
+Question 23) What component do we use in Swing to provide scrolling capabilities?
+
+Question 24) JList has a selection model.  Create a code snippet to demonstrate how we can set one to select a single item
+
+Question 25) Based on Question 24) please enumerate the various selection model available to a JList and provide a quick explanation of their features

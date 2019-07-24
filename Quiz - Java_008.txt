@@ -1,0 +1,60 @@
+Quiz
+
+Question 1) JavaFX is standard with all versions of Java and doesn't require installation. (true or false)
+
+Question 2) JavaFX is a set of graphics and media packages that enables developers to design, create, test, debug, and deploy rich client applications that operate consistently across diverse platforms. (true or false)
+
+Question 3) What are the key features in JavaFX 8, please write in a bullet list.
+
+Question 4) Are there any similarities with Java's other GUIs such as AWT and Swing? (yes or no)
+
+Question 5) if Question 4) is yes, then what are they?
+
+Question 6) What is central to JavaFX's core architecture that you need at least one of each to have an app running? (enumerate)
+
+Question 7) A scene in Java FX is a top container? (true or false)
+
+Question 8) For a JavaFX app to run, it must extend from the state.Stage class? (true or false)
+
+Question 9) Individual elements of a scene are called nodes. (true or false)
+
+Question 10) What is a scene graph?
+
+	a) a collection of root nodes
+	b) nodes without children
+	c) group nodes
+	d) collection of all nodes in a scene
+	e) none of the above
+
+Quesion 11) The base class for all nodes is "Nodes" (true or false)
+
+Question 12) child nodes cannot have other child nodes (true or false)
+
+Question 13) JavaFx layouts are packages under javafx.layout.scene (true or false)
+
+Question 14) What are the life-cycles methods in the JavaFX Application class? and please list them in order of execution.
+
+Question 15) if you wish for a JavaFX application to execute via the life-cycle methods, how would you do it? Provide a code snippet to help explain.
+
+Question 16) What's the package name to import to access the various JavaFX controls?
+
+Question 17) Can we draw on a Canvas object using an API? (yes / no)
+
+Question 18) assuming yes on the previous question, what object must we draw on in 2D? provide a sample code snippet as an example of the Object, it's instance and the assignment of the instance.
+
+Question 19) What object allows you to create a 'list' of items which are observable? Please name it and then write a code snippet which would create an instance with the items "get up", "survive" and "go to bed".
+
+Question 20) What object displays a list and how would use it? Create a snippet of code which best demonstrate what it is and how to create an instance
+
+Question 21) In your own words, what's the difference between a ListView and a ComboBox and please demonstrate their similarities as well.
+
+Question 22) Can JavaFX TextField responnd to keyboard events?  (yes or no)
+
+Question 23) if yes to the previous one, please write a code snippet where everytime a character is pressed in the textfield, it would write to a label the string of characters backward (in reverse)
+
+i.e. type Hello and the label would how olleH
+
+Question 24) What is anti-aliasing? what are the pros and cons of applying it? and how goes it apply to the Image control in JavaFX? (in your own words and a code snippet to demonstrate)
+
+Question 25) JavaFX ScrollPage has a setPannable method which can be true or false, so, what's the difference between the 2 booleans?  How does it behave differently?
+
